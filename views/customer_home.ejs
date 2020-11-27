@@ -1,0 +1,69 @@
+<script>
+    function makeRequest() {
+        $.ajax({
+            url: "https://healthbank-api-service.herokuapp.com/api/0.1.0/customer/products",
+            type: 'GET',
+            contentType: 'application/json',
+            headers: {
+                    "Authorization": "Bearer " + $('#token').val()
+                 },
+            async: false
+        })
+    }
+</script>
+<div>
+    <div class="card-deck">
+        <div class="card border-primary m-auto" style="max-width: 30rem">
+  
+            <div class="card-body text-center">
+              <h4>Get all products</h4>
+            </div>
+            <form action="https://healthbank-api-service.herokuapp.com/api/0.1.0/customer/products" method="GET">
+                <div class="form-group">
+
+                    <label for="token">Token</label>
+                    <input
+                    type="text"
+                    id="token"
+                    name="token"
+                    value="<%= typeof token != 'undefined' ? token : '' %>"
+                    />
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary center" onclick="makeRequest();">Submit</button>
+                </div> 
+            </form>
+        </div>
+        <div class="card border-primary m-auto" style="max-width: 30rem">
+  
+            <div class="card-body text-center">
+              <h4>Get all medicines</h4>
+            </div>
+            
+            <form action="https://healthbank-api-service.herokuapp.com/api/0.1.0/customer/medicine/:userId" method="GET">
+                <div class="form-group">
+
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary center">Submit</button>
+                </div> 
+            </form>
+        </div>
+        <div class="card border-primary m-auto" style="max-width: 30rem">
+  
+            <div class="card-body text-center">
+              <h4>Get all health and beauty products</h4>
+            </div>
+            
+            <form action="https://healthbank-api-service.herokuapp.com/api/0.1.0/customer/hnb/:userId" method="GET">
+                <div class="form-group">
+
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary center">Submit</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+  
+</div>

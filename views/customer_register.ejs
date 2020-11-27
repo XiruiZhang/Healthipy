@@ -1,0 +1,96 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">Register</h1>
+        <% include ./partials/messages %>
+        <form action="https://healthbank-api-service.herokuapp.com/api/0.1.0/auth/register" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="name"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Enter Username"
+              value="<%= typeof username != 'undefined' ? username : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-control"
+              placeholder="Enter First Name"
+              value="<%= typeof firstName != 'undefined' ? firstName : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-control"
+              placeholder="Enter Last Name"
+              value="<%= typeof lastName != 'undefined' ? lastName : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="accountType">Account Type (default)</label>
+            <input
+              type="text"
+              id="accountType"
+              name="accountType"
+              class="form-control"
+              placeholder="customer"
+              value="customer"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input
+              type="number"
+              id="mobileNumber"
+              name="mobileNumber"
+              class="form-control"
+              placeholder="Enter Mobile Number"
+              value="<%= typeof mobileNumber != 'undefined' ? mobileNumber : '' %>"
+            />
+          </div>
+          <div class="checkbox">
+            <label for="confirmByPhone">Get Confirmed By Phone
+            <input type="checkbox" value=""></label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Register
+          </button>
+        </form>
+        <p class="lead mt-4">Have An Account? <a href="/users/customer_login">Login</a></p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+<% include ./partials/messages %>
+<div class="modal-footer">
+    <p class="lead text-right">PharmacySpace</p>
+    <a href="/users/logout">Logout</a>
+</div>
+
+<form action="/pharmacy/appointments" method="POST">
+	<div class="form-group">
+    	<label for="inputFile">File input</label>
+     	<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

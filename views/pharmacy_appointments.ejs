@@ -1,0 +1,45 @@
+<% include ./partials/messages %>
+<div class="modal-footer">
+    <p class="lead text-right">PharmacySpace</p>
+    <a href="/users/logout">Logout</a>
+</div>
+
+<form action="/pharmacy/appointments" method="POST">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email"
+               class="form-control"
+               id="email"
+               name='email'
+               placeholder="Patient's email"
+               value="<%= typeof email != 'undefined' ? email : '' %>" />
+    </div>
+    <div class="form-group">
+        <label for="datetime">Date&Time</label>
+        <input type="datetime-local" class="form-control" id="datetime" name='datetime' />
+    </div>
+    <div class="form-group row" id="root">
+        <div class="form-group col-md-6">
+            <label for="medicine">Medicine</label>
+            <input type="text" class="form-control" id="medicine" name="medicine[]" placeholder="Enter the medicine">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="number[]" placeholder="Enter the quantity">
+        </div>
+    </div>
+    <div class="form-group" id="addFields">
+        <input type="button" value="Not enough medicine?" onclick="createNewElement();" />
+    </div>
+
+    <div class="form-group row">
+        <div class="form-group col-md-6" id="newElementId"></div>
+        <div class="form-group col-md-6" id="newElementId2"></div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Confirm</button>
+        <a href="/pharmacy/home" class="btn btn-secondary">Back</a>
+    </div>
+
+</form>

@@ -1,0 +1,50 @@
+<% include ./partials/messages %>
+<div class="modal-footer">
+    <p class="lead text-right">PharmacySpace</p>
+    <a href="/users/logout">Logout</a>
+</div>
+
+<div class="jumbotron">
+    <h1 class="display-5">Welcome back, <%= user.name %> !</h1>
+    <hr class="my-4">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#patients">Patient</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#appointments">Appointment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#stocks">Stock</a>
+        </li>
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="home">
+            <p class="lead"></p>
+            <h5>Appointments of the day:</h5>
+            <h5>Claims to be processed:</h5>
+            <p class="lead"></p>
+            <a href="/pharmacy/details" class="btn btn-primary btn-block mb-2">Details</a> 
+        </div>
+        <div class="tab-pane fade" id="patients">
+            <p class="lead"></p>
+            <a href="/pharmacy/create_patient_profiles" class="btn btn-primary btn-block mb-2">Create Patient Profile</a>
+            <a href="/pharmacy/search_patient_profiles" class="btn btn-primary btn-block mb-2">Search for Patient Profiles</a>
+            <a href="/pharmacy/upload_patient_files" class="btn btn-primary btn-block mb-2">Upload files</a>
+        </div>
+        <div class="tab-pane fade" id="appointments">
+            <p class="lead"></p>
+            <a href="/pharmacy/appointments" class="btn btn-primary btn-block mb-2">Make Appointments</a>       
+        </div>
+        <div class="tab-pane fade" id="stocks">
+            <p class="lead"></p>
+            <a href="/pharmacy/stocks" class="btn btn-primary btn-block mb-2">Update stocks</a>
+        </div>
+    </div>
+
+</div>
